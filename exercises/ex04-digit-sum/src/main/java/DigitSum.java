@@ -23,22 +23,12 @@ public class DigitSum {
      */
     public static int digitSum(int n) {
         int sum = 0;
-
-        // Gets the length of n, removes the neg sign
-        int length = String.valueOf(Math.abs(n)).length();
-
-        if (length > 1) {
-            // Converts the int into a String so I can iterate through the String
-            String numberStr = Integer.toString(Math.abs(n));
-            for (int i = 0; i < numberStr.length(); i++) {
-                char digitChar = numberStr.charAt(i);
-                // Convert the character back to an int so I can add it and save the values to sum
-                int digit = Character.getNumericValue(digitChar);
-                sum += digit;
-            }
-        }
-        else {
-            return Math.abs(n);
+        n = Math.abs(n);
+        while (n > 0) {
+            //Last digit of the number
+            sum += n % 10;
+            //Removing the last digit
+            n = n/10;
         }
         return sum;
     }
