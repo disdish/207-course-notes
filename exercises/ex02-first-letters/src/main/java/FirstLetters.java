@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Exercise (Chapter 1: Introduction to Java) — Strings and StringBuilder.
  *
@@ -25,7 +28,20 @@ public class FirstLetters {
      * @return the first character of each word, concatenated
      */
     public static String firstLetters(String words) {
-        // TODO: complete
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(words.charAt(0));
+
+        List<Integer> spaceIndex = new ArrayList<>();
+        for (int i = 0; i < words.length(); i++) {
+            if (words.charAt(i) == ' ') {
+                spaceIndex.add(i);
+            }
+        }
+
+        for (Integer index : spaceIndex) {
+            sb.append(words.charAt(index + 1));
+        }
+
+        return sb.toString();
     }
 }
