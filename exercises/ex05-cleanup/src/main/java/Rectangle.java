@@ -1,5 +1,5 @@
 /**
- * A Class to calculate the area of a rectangle, get the width and height, along with comparing the
+ * A Class to calculate the area of a rectangle, set the width and height, along with comparing the
  * rectangles, and scaling the area of the rectangles.
  */
 public class Rectangle {
@@ -27,7 +27,7 @@ public class Rectangle {
   }
 
   /**
-   * scales the rectangle.
+   * Scales the rectangle.
    *
    * @param factor a double to multiply the width and height
    */
@@ -41,7 +41,6 @@ public class Rectangle {
    *
    * @param other Type rectangle
    * @return true if rectangle is larger than the other rectangle
-   *
    */
   public boolean isLargerThan(Rectangle other) {
     if (area() > other.area()) {
